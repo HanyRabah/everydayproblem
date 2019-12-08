@@ -1,0 +1,24 @@
+{
+  "name": "everydayproblem",
+  "version": "1.0.0",
+  "description": "This repo is to solve Algorithm questions related for frontend. we will have a questions about Array manipulations and data structure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HanyRabah/everydayproblem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HanyRabah/everydayproblem/issues"
+  },
+  "homepage": "https://github.com/HanyRabah/everydayproblem#readme",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1"
+  }
+}

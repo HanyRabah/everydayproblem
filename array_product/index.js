@@ -9,6 +9,14 @@
 // I would like also to use different solutions approach so if you have more than one solution
 // let's list it down.
 
-function solution(a) {}
+function arrayProduct(a) {
+  if (!a || !Array.isArray(a)) {
+    return [];
+  }
 
-module.exports = solution;
+  return a.map((n, i) => {
+    return a.reduce((xs, x, j) => j === i ? xs : (xs *= x), a[0]);
+  });
+}
+
+module.exports = arrayProduct;
