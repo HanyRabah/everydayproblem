@@ -3,6 +3,9 @@
 This repo is to solve Algorithm questions related for frontend.
 we will have a questions about Array manipulations and data structure.
 
+You can fork the repo and start solving the problem on your forked repo
+either wise I'll add the solution at the end of everyday.
+
 will keep the repo simple as possible so will only add questions folders
 will not use package.json maybe in future we will need it but now let's make it simple.
 
