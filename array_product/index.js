@@ -9,6 +9,14 @@
 // I would like also to use different solutions approach so if you have more than one solution
 // let's list it down.
 
-function solution(a) {}
+// Follow-up: what if you can't use division?
+
+function solution(arr) {
+  // one iteration to get product of whole array
+  const totalProduct = arr.reduce((acc, cur) => acc * cur, 1);
+  // one iteration to map new array values by dividing
+  // full array product by current value
+  return arr.map(val => totalProduct / val);
+}
 
 module.exports = solution;
