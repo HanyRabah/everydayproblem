@@ -28,4 +28,4 @@ jest <problem_folder>/test.js --watch
 
 ### List of problems
 
-1. [Array Product](array_product/README.md)
+1. [Array Product](array_product/)
