@@ -5,5 +5,13 @@ test('MissingInteger function is defined', () => {
 });
 
 test('Calling MissingInteger with diff prints out the correct values', () => {
-  expect([1, 2, 4]).toEqual(3);
+  expect(MissingInteger([1, 2, 4])).toEqual(3);
+});
+
+test('Calling MissingInteger with diff prints out the correct values', () => {
+  expect(MissingInteger([-1, -3])).toEqual(1);
+});
+
+test('Calling MissingInteger with diff prints out the correct values', () => {
+  expect(MissingInteger([-1, -3, 1])).toEqual(2);
 });

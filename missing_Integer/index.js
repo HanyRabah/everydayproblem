@@ -6,6 +6,16 @@
 // Write an efficient algorithm for the following assumptions:
 // N is an integer within the range [1..100,000];
 // each element of array A is an integer within the range [−1,000,000..1,000,000].
-function solution(S) {}
+
+function solution(A) {
+  var min = 1;
+  A.sort((a, b) => a - b);
+  if (A.indexOf(1) == -1) return 1;
+
+  for (var i in A) {
+    if (A[i] > -1 && A[i] == min) min++;
+  }
+  return min;
+}
 
 module.exports = solution;
