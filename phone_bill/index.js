@@ -29,6 +29,66 @@
 
 //  In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
-function solution(S) {}
+function solution(S) {
+  var phoneMap = {};
+  // convert input string into array of each phone bill entry
+  var billArray = S.split('\n');
+
+  var totalBill = 0;
+  var maxDuration = 0;
+  var phonesWithMaxDuration = '';
+
+  // create mapping between phone number and total seconds billed
+  for (var i = 0; i < billArray.length; i++) {
+    var entry = billArray[i].split(',');
+    var durationArray = entry[0].split(':');
+    var totalSeconds =
+      parseInt(durationArray[0]) * 3600 +
+      parseInt(durationArray[1]) * 60 +
+      parseInt(durationArray[2]);
+
+    if (phoneMap[entry[1]]) {
+      phoneMap[entry[1]] += totalSeconds;
+    } else {
+      phoneMap[entry[1]] = totalSeconds;
+    }
+    if (phoneMap[entry[1]] > maxDuration) {
+      maxDuration = phoneMap[entry[1]];
+    }
+  }
+
+  // find the phone number with the longest total duration
+  var minNumValue = Number.POSITIVE_INFINITY;
+  for (var key in phoneMap) {
+    if (phoneMap[key] === maxDuration) {
+      var numValue = parseInt(key.split('-').join(''));
+      if (numValue < minNumValue) {
+        minNumValue = numValue;
+        phonesWithMaxDuration = key;
+      }
+    }
+  }
+  // calculate the total phone bill
+  for (var i = 0; i < billArray.length; i++) {
+    var entry = billArray[i].split(',');
+    // apply the promotion to set the calls to the phone number with the longest duration to be free
+    if (entry[1] !== phonesWithMaxDuration) {
+      var durationArray = entry[0].split(':');
+      var totalSeconds =
+        parseInt(durationArray[0]) * 3600 +
+        parseInt(durationArray[1]) * 60 +
+        parseInt(durationArray[2]);
+      if (totalSeconds < 300) {
+        totalBill += totalSeconds * 3;
+      } else {
+        totalBill +=
+          (Math.floor(totalSeconds / 60) + (totalSeconds % 60 > 0 ? 1 : 0)) *
+          150;
+      }
+    }
+  }
+
+  return totalBill;
+}
 
 module.exports = solution;
