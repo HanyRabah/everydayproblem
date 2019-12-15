@@ -1,15 +1,15 @@
 {
-  "name": "dev",
+  "name": "Everyday_problem",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "verbose": true
   },
-  "author": "",
+  "author": "Hany Rabah",
   "license": "ISC",
   "dependencies": {
     "jest": "^24.9.0"
